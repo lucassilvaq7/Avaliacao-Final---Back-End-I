@@ -42,7 +42,8 @@ router.post('/login', validateUserLogin, (req, res) => {
         const user = users.find(user => user.email === email)
 
         return res.status(200).json({
-            message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`
+            message: `Seja bem vindo ${user.name}! Pessoa usuária logada com sucesso!`,
+            sessionLogin: user.email
         })
 
     } catch (error) {
